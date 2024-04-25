@@ -1,0 +1,33 @@
+spring.application.name: customer
+server.port: 7001
+server.error.include-message: always
+spring.web.resources.add-mappings: false
+
+url.product-service:
+  host: http://localhost
+  port: 8001
+url.credentials-service:
+  host: http://localhost
+  port: 9001
+
+---
+spring.config.activate.on-profile: qa
+server.port: 8080
+
+url.product-service:
+  host: http://products
+  port: 8080
+url.credentials-service:
+  host: http://credentials
+  port: 8080
+
+---
+spring.config.activate.on-profile: prod
+server.port: 8080
+
+url.product-service:
+  host: http://products
+  port: 8080
+url.credentials-service:
+  host: http://credentials
+  port: 8080

@@ -1,0 +1,6 @@
+rootProject.name = 'code-challenge-encora'
+
+include ':microservices:credentials'
+include ':microservices:customer'
+include ':microservices:products'
+include ':utils'

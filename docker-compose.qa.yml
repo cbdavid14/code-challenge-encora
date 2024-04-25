@@ -1,0 +1,77 @@
+version: '3.8'
+
+
+services:
+  products:
+    build: microservices/ms-products
+    networks:
+      - encora
+    ports:
+      - "8082:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=qa
+    depends_on:
+      mongodb:
+        condition: service_healthy
+
+  credentials:
+    build: microservices/ms-credentials-control
+    networks:
+      - encora
+    ports:
+      - "8081:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=qa
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  customer:
+    build: microservices/ms-customer-products
+    networks:
+      - encora
+    environment:
+      - SPRING_PROFILES_ACTIVE=qa
+    ports:
+      - "8080:8080"
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    networks:
+      - encora
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+      - MONGODB_DATABASE=product-storage
+    volumes:
+      - ./../.data/mongodb:/data/db
+    ports:
+      - 27017:27017
+    healthcheck:
+      test: "mongostat -n 1"
+      interval: 5s
+      timeout: 2s
+      retries: 60
+
+  mysql:
+    image: mysql:oracle
+    container_name: "mysql"
+    networks:
+      - encora
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./../.data/mysqldb:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=credential-storage
+      - MYSQL_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=123456
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=123456 --execute \"SHOW DATABASES;\""
+      interval: 5s
+      timeout: 2s
+      retries: 60
+
+networks:
+  encora:

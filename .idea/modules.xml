@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.encora.challenged.credentials.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.encora.challenged.credentials.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.encora.challenged.customer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.encora.challenged.customer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.encora.challenged.products.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.encora.challenged.products.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/credentials.iml" filepath="$PROJECT_DIR$/.idea/modules/credentials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/credentials.main.iml" filepath="$PROJECT_DIR$/.idea/modules/credentials.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/credentials.test.iml" filepath="$PROJECT_DIR$/.idea/modules/credentials.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/customer.iml" filepath="$PROJECT_DIR$/.idea/modules/customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/customer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/customer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/customer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/customer.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/products.iml" filepath="$PROJECT_DIR$/.idea/modules/products.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/products.main.iml" filepath="$PROJECT_DIR$/.idea/modules/products.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/products.test.iml" filepath="$PROJECT_DIR$/.idea/modules/products.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils.iml" filepath="$PROJECT_DIR$/.idea/modules/utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils.main.iml" filepath="$PROJECT_DIR$/.idea/modules/utils.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils.test.iml" filepath="$PROJECT_DIR$/.idea/modules/utils.test.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,21 @@
+spring.application.name: products
+server.port: 8001
+server.error.include-message: always
+spring.web.resources.add-mappings: false
+
+
+spring.data.mongodb:
+  host: localhost
+  port: 27017
+  database: product-storage
+
+---
+spring.config.activate.on-profile: qa
+server.port: 8080
+spring.data.mongodb:
+  host: mongodb
+---
+spring.config.activate.on-profile: prod
+server.port: 8080
+spring.data.mongodb:
+  host: mongodb

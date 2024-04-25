@@ -1,0 +1,45 @@
+version: '3.8'
+
+
+services:
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    networks:
+      - encora
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+      - MONGODB_DATABASE=product-storage
+    volumes:
+      - ./../.data/mongodb:/data/db
+    ports:
+      - 27017:27017
+    healthcheck:
+      test: "mongostat -n 1"
+      interval: 5s
+      timeout: 2s
+      retries: 60
+
+  mysql:
+    image: mysql:oracle
+    container_name: "mysql"
+    networks:
+      - encora
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./../.data/mysqldb:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=credential-storage
+      - MYSQL_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=123456
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=123456 --execute \"SHOW DATABASES;\""
+      interval: 5s
+      timeout: 2s
+      retries: 60
+
+networks:
+  encora:
